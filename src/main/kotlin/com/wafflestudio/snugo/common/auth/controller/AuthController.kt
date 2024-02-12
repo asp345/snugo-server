@@ -1,7 +1,8 @@
-package com.wafflestudio.snugo.common.auth
+package com.wafflestudio.snugo.common.auth.controller
 
-import com.wafflestudio.snugo.common.auth.model.LoginRequest
-import com.wafflestudio.snugo.common.auth.model.LoginResponse
+import com.wafflestudio.snugo.common.auth.model.SignupRequest
+import com.wafflestudio.snugo.common.auth.model.TokenResponse
+import com.wafflestudio.snugo.common.auth.service.AuthService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -13,7 +14,7 @@ class AuthController(
 	private val authService: AuthService
 ) {
 	@PostMapping("/login")
-	fun login(@RequestBody request: LoginRequest): LoginResponse {
-		return authService.login(request.email, request.password)
+	fun signup(@RequestBody request: SignupRequest): TokenResponse {
+		return authService.generateToken(request)
 	}
 }
