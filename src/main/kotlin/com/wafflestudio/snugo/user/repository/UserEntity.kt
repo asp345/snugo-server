@@ -1,9 +1,7 @@
 package com.wafflestudio.snugo.user.repository
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import com.wafflestudio.snugo.dept.model.Department
+import jakarta.persistence.*
 
 @Entity(name = "user")
 class UserEntity(
@@ -12,9 +10,6 @@ class UserEntity(
 	val id: Long? = null,
 	var token: String? = null,
 	val nickname: String,
+	@Enumerated(EnumType.STRING)
 	val department: Department
-) {
-	enum class Department {
-		ENGINEERING, BUSINESS, DESIGN, HUMANITIES, SOCIAL_SCIENCE, NATURAL_SCIENCE
-	}
-}
+)
