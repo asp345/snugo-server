@@ -1,8 +1,8 @@
 package com.wafflestudio.snugo.user.repository
 
-import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.mongodb.repository.MongoRepository
 
-interface UserRepository : JpaRepository<UserEntity, Long> {
-	fun findByToken(token: String): UserEntity?
-	fun findByNickname(nickname: String): UserEntity?
+interface UserRepository : MongoRepository<User, Long> {
+	fun findByToken(token: String): User?
+	fun findByNickname(nickname: String): User?
 }

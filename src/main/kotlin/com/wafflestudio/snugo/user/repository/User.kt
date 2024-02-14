@@ -1,15 +1,14 @@
 package com.wafflestudio.snugo.user.repository
 
 import com.wafflestudio.snugo.dept.model.Department
-import jakarta.persistence.*
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 
-@Entity(name = "user")
-class UserEntity(
+@Document(collection = "user")
+class User(
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	val id: Long? = null,
 	var token: String? = null,
 	val nickname: String,
-	@Enumerated(EnumType.STRING)
 	val department: Department
 )
