@@ -23,13 +23,12 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven("https://naver.jfrog.io/artifactory/maven/")
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
-	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-web-services")
@@ -41,6 +40,11 @@ dependencies {
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+	implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+	implementation("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")

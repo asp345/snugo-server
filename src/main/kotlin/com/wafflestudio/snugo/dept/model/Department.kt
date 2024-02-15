@@ -16,5 +16,17 @@ enum class Department(val value: String) {
 	MUSIC("음악대학"),
 	MEDICINE("의과대학"),
 	CLS("자유전공학부"),
-	SNUTI("첨단융합학부")
+	SNUTI("첨단융합학부"),
+	DEFAULT("기타");
+
+	companion object {
+		fun nameToDept(deptName: String): Department {
+			for (i in entries) {
+				if (i.value == deptName) {
+					return i
+				}
+			}
+			return DEFAULT
+		}
+	}
 }
