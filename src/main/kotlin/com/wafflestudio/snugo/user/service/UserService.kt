@@ -21,7 +21,7 @@ class UserService(
 			val user = userRepository.save(
 				User(
 					nickname = nickname,
-					department = Department.valueOf(department)
+					department = Department.nameToDept(department)
 				)
 			)
 			user.token = tokenGenerator.generateToken(user.id!!, nickname, department)
