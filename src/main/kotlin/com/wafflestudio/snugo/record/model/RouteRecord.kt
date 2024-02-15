@@ -3,7 +3,7 @@ package com.wafflestudio.snugo.record.model
 import com.wafflestudio.snugo.location.model.Building
 import com.wafflestudio.snugo.location.model.LatLng
 
-data class Record(
+data class RouteRecord(
 	val id: String,
 	val nickname: String,
 	val buildings: List<Building>,
