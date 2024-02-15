@@ -2,5 +2,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/snugo
+  mvc:
+    log-request-details: true
+logging:
+  level:
+    root: debug
+
 jwt:
   secret: secret000000000000000000000000

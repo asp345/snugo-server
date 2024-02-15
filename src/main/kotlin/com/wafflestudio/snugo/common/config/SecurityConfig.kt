@@ -21,7 +21,7 @@ class SecurityConfig {
 			csrf { disable() }
 			addFilterAfter<BasicAuthenticationFilter>(authFilter)
 			authorizeHttpRequests {
-				authorize("/v1/register", permitAll)
+				authorize("/v1/user/register", permitAll)
 				authorize("/v1/departments", permitAll)
 				authorize("/swagger-ui/**", permitAll)
 				authorize("/v3/api-docs/**", permitAll)

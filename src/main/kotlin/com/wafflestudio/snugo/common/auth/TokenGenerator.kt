@@ -11,7 +11,7 @@ class TokenGenerator(
 	@Value("\${jwt.secret}") private val secret: String,
 ) {
 	private val algo = Algorithm.HMAC256(Base64.getDecoder().decode(secret))
-	fun generateToken(uid: Long, nickname: String, department: String): String {
+	fun generateToken(uid: String, nickname: String, department: String): String {
 		val jwt = JWT.create()
 			.withClaim("uid", uid)
 			.withClaim("nickname", nickname)

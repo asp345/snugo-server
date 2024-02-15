@@ -4,7 +4,7 @@ import com.wafflestudio.snugo.common.auth.TokenGenerator
 import com.wafflestudio.snugo.common.auth.service.AuthService
 import com.wafflestudio.snugo.dept.model.Department
 import com.wafflestudio.snugo.user.model.TokenResponse
-import com.wafflestudio.snugo.user.repository.User
+import com.wafflestudio.snugo.user.model.User
 import com.wafflestudio.snugo.user.repository.UserRepository
 import org.springframework.stereotype.Service
 

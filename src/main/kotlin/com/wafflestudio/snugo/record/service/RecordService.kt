@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 class RecordService(
 	private val routeRecordRepository: RouteRecordRepository
 ) {
-	fun getMyRecordList(userId: Long): List<RouteRecord> {
-		return routeRecordRepository.findAllByNickname(userId.toString())
+	fun getMyRecordList(uid: String): List<RouteRecord> {
+		return routeRecordRepository.findByUid(uid)
 	}
 }

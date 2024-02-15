@@ -28,7 +28,7 @@ class TokenVerifier(
 	}
 
 	private fun createAuthUserInfo(token: DecodedJWT): AuthUserInfo {
-		val uid = token.getClaim("uid")?.asLong()!!
+		val uid = token.getClaim("uid")?.asString()!!
 		val nickname = token.getClaim("nickname")?.asString()!!
 		val department = token.getClaim("department")?.asString()!!
 		return AuthUserInfo(uid, nickname, department)
